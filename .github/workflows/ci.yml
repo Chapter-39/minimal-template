@@ -1,0 +1,46 @@
+name: CI
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+jobs:
+  build-and-test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Detectar proyecto Node
+        id: detect
+        run: |
+          if [ -f package.json ]; then echo "has_node=true" >> $GITHUB_OUTPUT; else echo "has_node=false" >> $GITHUB_OUTPUT; fi
+
+      - name: Setup Node
+        if: steps.detect.outputs.has_node == 'true'
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+          cache: "npm"
+
+      - name: Instalar dependencias
+        if: steps.detect.outputs.has_node == 'true'
+        run: npm ci
+
+      - name: Lint
+        if: steps.detect.outputs.has_node == 'true'
+        run: |
+          if npm run | grep -q " lint"; then npm run lint; else echo "Sin script lint"; fi
+
+      - name: Test
+        if: steps.detect.outputs.has_node == 'true'
+        run: |
+          if npm run | grep -q " test"; then \
+            TEST_SCRIPT=$(node -pe "(require('./package.json').scripts||{}).test || ''"); \
+            if echo "$TEST_SCRIPT" | grep -qi 'no test specified'; then \
+              echo "Saltando tests: script placeholder"; \
+            else \
+              npm test --silent -- --ci || npm test; \
+            fi; \
+          else \
+            echo "Sin tests"; \
+          fi

@@ -1,0 +1,67 @@
+name: Informe de error (bug)
+description: Algo no funciona como debería.
+title: "[BUG] Descripción breve del problema"
+labels: ["bug", "triage"]
+assignees: []
+body:
+  - type: markdown
+    attributes:
+      value: "Gracias por reportarlo. Cuanta más info des, antes lo arreglamos."
+  - type: checkboxes
+    id: scope
+    attributes:
+      label: ¿Dónde ocurre?
+      options:
+        - label: Web
+        - label: iOS
+  - type: input
+    id: version
+    attributes:
+      label: Versión de la app
+      description: "La ves en Ajustes → Acerca de (ej. 3.6.9)."
+      placeholder: "3.6.9"
+    validations:
+      required: true
+  - type: input
+    id: os
+    attributes:
+      label: Sistema operativo / versión
+      placeholder: "iOS 17.5 / Safari 17, macOS 14.5, etc."
+  - type: textarea
+    id: steps
+    attributes:
+      label: Pasos para reproducir
+      description: "1… 2… 3… qué esperabas y qué pasó realmente."
+      placeholder: |
+        1. Abrí…
+        2. Toqué…
+        3. Esperaba…
+        4. Ocurrió…
+    validations:
+      required: true
+  - type: textarea
+    id: screenshots
+    attributes:
+      label: Capturas o vídeo
+      description: "Arrastra archivos aquí."
+  - type: textarea
+    id: logs
+    attributes:
+      label: Mensajes de error (si los hay)
+      description: "Texto del error o consola."
+      render: shell
+  - type: dropdown
+    id: severity
+    attributes:
+      label: Severidad
+      options:
+        - Bloqueante (no puedo usar la app)
+        - Alta
+        - Media
+        - Baja
+    validations:
+      required: true
+  - type: textarea
+    id: extra
+    attributes:
+      label: Notas adicionales

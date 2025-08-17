@@ -1,0 +1,44 @@
+{
+  "name": "@chapter-39/minimal-template",
+  "version": "1.0.0",
+  "description": "A minimal template for Node.js projects",
+  "keywords": [
+    "node",
+    "template",
+    "minimal",
+    "starter",
+    "boilerplate"
+  ],
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "format": "node script/format.js",
+    "lint": "node script/lint.js",
+    "prepare": "husky"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/chapter-39/minimal-template.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/chapter-39/minimal-template/issues"
+  },
+  "homepage": "https://github.com/chapter-39/minimal-template#readme",
+  "devDependencies": {
+    "eslint": "^9.33.0",
+    "husky": "^9.1.7",
+    "lint-staged": "^16.1.5",
+    "prettier": "^3.6.2"
+  },
+  "lint-staged": {
+    "*.{js,jsx,ts,tsx,vue,cjs,mjs}": [
+      "npm run lint --"
+    ],
+    "*.{js,jsx,ts,tsx,vue,cjs,mjs,json,css,scss,md,yml,yaml}": [
+      "npm run format --"
+    ]
+  }
+}

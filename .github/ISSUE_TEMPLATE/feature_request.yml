@@ -1,0 +1,51 @@
+name: Sugerencia / mejora
+description: Propón una idea para mejorar la app.
+title: "[FEATURE] Descripción breve de la mejora"
+labels: ["enhancement", "triage"]
+assignees: []
+body:
+  - type: markdown
+    attributes:
+      value: "Las buenas ideas se agradecen. Intentemos que también sean viables."
+  - type: textarea
+    id: problem
+    attributes:
+      label: ¿Qué problema resuelve?
+      description: "Qué te molesta o limita hoy."
+      placeholder: "Cuando… me resulta… porque…"
+    validations:
+      required: true
+  - type: textarea
+    id: proposal
+    attributes:
+      label: ¿Cuál es tu propuesta?
+      description: "Describe la funcionalidad desde el punto de vista del usuario."
+      placeholder: "Como usuario quiero… para…"
+    validations:
+      required: true
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: Alternativas consideradas
+      placeholder: "Otras ideas que podrían servir."
+  - type: checkboxes
+    id: scope
+    attributes:
+      label: ¿Dónde aplica?
+      options:
+        - label: Web
+        - label: iOS
+  - type: dropdown
+    id: impact
+    attributes:
+      label: Impacto esperado
+      options:
+        - Alto (muchos usuarios)
+        - Medio
+        - Bajo (caso puntual)
+    validations:
+      required: true
+  - type: textarea
+    id: extra
+    attributes:
+      label: Notas adicionales

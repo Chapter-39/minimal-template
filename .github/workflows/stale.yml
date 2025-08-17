@@ -1,0 +1,24 @@
+name: Stale issues
+on:
+  schedule:
+    - cron: "22 2 * * *"
+  workflow_dispatch:
+
+jobs:
+  stale:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/stale@v9
+        with:
+          repo-token: ${{ secrets.GITHUB_TOKEN }}
+          days-before-stale: 30
+          days-before-close: 7
+          stale-issue-label: "stale"
+          stale-pr-label: "stale"
+          exempt-issue-labels: "pinned,security,roadmap"
+          exempt-pr-labels: "pinned,security,roadmap"
+          stale-issue-message: >
+            Esta issue lleva 30 días sin actividad. Si sigue siendo relevante,
+            añade un comentario. Si no, se cerrará en 7 días.
+          stale-pr-message: >
+            Este PR lleva 30 días sin actividad. Comenta o haz push para mantenerlo abierto.

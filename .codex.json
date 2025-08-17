@@ -1,0 +1,13 @@
+{
+  "providers": {
+    "codex": {
+      "commit": true,
+      "push": true
+    },
+    "codex-cli": {
+      "commit": false,
+      "push": false,
+      "add": false
+    }
+  }
+}

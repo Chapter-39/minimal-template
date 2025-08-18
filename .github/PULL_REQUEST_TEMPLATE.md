@@ -17,5 +17,5 @@ Pasos o comandos para verificar el cambio.
 
 - [ ] He probado localmente
 - [ ] He actualizado documentación si aplica
-- [ ] No rompe retrocompatibilidad (o lo indico)
+- [ ] No rompe retro-compatibilidad (o lo indico)
 - [ ] Título del PR sigue convención `feat: ...`, `fix: ...`, etc.

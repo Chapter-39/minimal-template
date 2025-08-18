@@ -1,44 +1,30 @@
 {
-  "name": "@chapter-39/minimal-template",
-  "version": "1.0.0",
-  "description": "A minimal template for Node.js projects",
-  "keywords": [
-    "node",
-    "template",
-    "minimal",
-    "starter",
-    "boilerplate"
-  ],
-  "main": "index.js",
+  "name": "minimal-template",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "format": "node script/format.js",
-    "lint": "node script/lint.js",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
     "prepare": "husky"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/chapter-39/minimal-template.git"
-  },
-  "author": "",
-  "license": "ISC",
-  "type": "commonjs",
-  "bugs": {
-    "url": "https://github.com/chapter-39/minimal-template/issues"
-  },
-  "homepage": "https://github.com/chapter-39/minimal-template#readme",
   "devDependencies": {
-    "eslint": "^9.33.0",
-    "husky": "^9.1.7",
-    "lint-staged": "^16.1.5",
-    "prettier": "^3.6.2"
+    "@eslint/js": "^9.10.0",
+    "eslint": "^9.10.0",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-plugin-import": "^2.29.1",
+    "husky": "^9.1.0",
+    "lint-staged": "^15.2.8",
+    "prettier": "^3.3.3"
   },
   "lint-staged": {
-    "*.{js,jsx,ts,tsx,vue,cjs,mjs}": [
-      "npm run lint --"
+    "*.{js,ts,jsx,tsx,vue,json,md,yml,yaml}": [
+      "prettier --write"
     ],
-    "*.{js,jsx,ts,tsx,vue,cjs,mjs,json,css,scss,md,yml,yaml}": [
-      "npm run format --"
+    "*.{js,ts,jsx,tsx,vue}": [
+      "eslint --fix"
     ]
   }
 }

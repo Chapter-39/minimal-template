@@ -18,12 +18,7 @@ module.exports = [
       sourceType: "module",
     },
     plugins: { import: importPlugin },
-    rules: {
-      "no-unused-vars": ["warn", { argsIgnorePattern: "^_", varsIgnorePattern: "^_" }],
-      "no-console": "off",
-      // ejemplos útiles del plugin import; quita si no los quieres
-      "import/order": ["warn", { "newlines-between": "always" }],
-    },
+    rules: {},
   },
 
   // Desactiva choques con Prettier (no formatea, solo evita conflictos)

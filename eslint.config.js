@@ -1,9 +1,9 @@
-// eslint.config.cjs
-const js = require("@eslint/js");
-const importPlugin = require("eslint-plugin-import");
-const prettier = require("eslint-config-prettier");
+// eslint.config.js (ESM)
+import js from "@eslint/js";
+import importPlugin from "eslint-plugin-import";
+import prettier from "eslint-config-prettier";
 
-module.exports = [
+export default [
   // Ignora lo obvio
   { ignores: ["dist/**", "node_modules/**", ".idea/**", ".husky/**"] },
 

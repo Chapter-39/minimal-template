@@ -8,7 +8,6 @@
     "Run npm run format:check to ensure codebase is correctly formatted.",
     "Run npm run lint to ensure codebase passes linting rules.",
     "If all checks succeed, mark the repository as ready for maintenance.",
-    "Execute npm run format to format the code.",
     "Execute npm run lint to lint the code."
   ]
 }

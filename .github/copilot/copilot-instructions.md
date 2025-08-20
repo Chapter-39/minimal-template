@@ -5,4 +5,4 @@
 - Use lowercase for type and scope.
 - Keep description under 72 chars.
 - Example: feat(auth): add JWT validation
-- Example 2: type(scope): 71 char description.
+- Example 2: fix(api): validate user input parameters before processing

@@ -1,13 +1,13 @@
 # minimal-template
 
-Plantilla mínima con ESLint + Prettier + Husky + lint-staged y CI en GitHub Actions.
+Minimal template with ESLint + Prettier + Husky + lint-staged and CI via GitHub Actions.
 
 ## Scripts
 
 - `npm run lint` / `npm run lint:fix`
 - `npm run format` / `npm run format:check`
 
-## Requisitos
+## Requirements
 
 Node 20+.
 

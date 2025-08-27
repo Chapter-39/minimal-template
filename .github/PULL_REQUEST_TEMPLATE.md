@@ -1,21 +1,21 @@
-## Resumen
+## Summary
 
-Describe qué cambia este PR y por qué.
+Describe what this PR changes and why.
 
-## Tipo de cambio
+## Change type
 
 - [ ] Bugfix
 - [ ] Feature
 - [ ] Refactor / chore
 - [ ] Docs
 
-## Cómo probarlo
+## How to test
 
-Pasos o comandos para verificar el cambio.
+Steps or commands to verify the change.
 
 ## Checklist
 
-- [ ] He probado localmente
-- [ ] He actualizado documentación si aplica
-- [ ] No rompe retro-compatibilidad (o lo indico)
-- [ ] Título del PR sigue convención `feat: ...`, `fix: ...`, etc.
+- [ ] Tested locally
+- [ ] Updated documentation if applicable
+- [ ] No breaking changes (or documented clearly if any)
+- [ ] PR title follows Conventional Commits (`feat: ...`, `fix: ...`, etc.)

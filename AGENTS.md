@@ -41,3 +41,12 @@
 
 - Require Node 20+. Never commit secrets; `.env` is ignored. Use GitHub Actions secrets for CI.
 - Dependabot is enabled; keep dependencies current. Review updates with CI green.
+
+## Agent Preflight
+
+- Read config first: `.codex/.codex.json`, `AGENTS.md`, `package.json` (scripts), `.editorconfig`, `eslint.config.*`, `.prettierrc*`, `.husky/**`, `.github/workflows/**`, `.github/CODEOWNERS`, and `CONTRIBUTING.md` if present.
+- Summarize the rules and propose a short plan before making edits or running non-read commands; wait for approval when requested.
+- Branching: use `codex/<task-slug>` as per `.codex/.codex.json`. Do not commit or push if you cannot sign commits or without explicit approval.
+- Validation: run `npm run format:check` and `npm run lint` before handing off changes. Prefer `npm ci` for installs.
+- Scope: make minimal, focused changes aligned with the task; avoid unrelated fixes unless requested.
+- CI alignment: ensure workflows still run `npm run lint` and `npm run format:check` and that Husky/lint-staged config remains intact.
